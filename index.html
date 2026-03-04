@@ -130,63 +130,310 @@
         .btn-icon {
             font-size: 2rem;
             min-width: 50px;
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ইংরেজি অধ্যায় সমূহ - SEMESTER III | SUBHA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* ইংলিশের জন্য ইউনিক ব্যাকগ্রাউন্ড - অক্সফোর্ড/কেমব্রিজের লাইব্রেরি মোটিফ */
+            background: linear-gradient(145deg, #2C3E50 0%, #4A5B6E 30%, #8B6B4D 70%, #C4A484 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Arial Unicode MS', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* ইংলিশের জন্য ইউনিক প্যাটার্ন - পুরোনো বইয়ের পাতা ও কলমের ইফেক্ট */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.1"><path d="M30 30 L170 30 L170 170 L30 170 Z" stroke="%23DAA520" fill="none" stroke-width="1.5"/><path d="M50 50 L150 50 L150 150 L50 150 Z" stroke="%23CD853F" fill="none" stroke-width="1"/><path d="M70 70 L130 70 L130 130 L70 130 Z" stroke="%23B8860B" fill="none" stroke-width="0.8"/><circle cx="100" cy="100" r="20" stroke="%23DAA520" fill="none" stroke-width="1"/><path d="M30 30 L170 170 M170 30 L30 170" stroke="%2396794F" stroke-width="0.8" opacity="0.5"/><text x="40" y="40" font-size="12" fill="%23DAA520" opacity="0.5">📖</text><text x="140" y="160" font-size="14" fill="%23CD853F" opacity="0.5">✍️</text></svg>');
+            background-repeat: repeat;
+            background-size: 250px 250px;
+            animation: floatingPages 90s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes floatingPages {
+            from { background-position: 0 0; }
+            to { background-position: 300px 300px; }
+        }
+
+        /* দ্বিতীয় লেয়ার - কুইল পেন ও ইঙ্ক ব্লট */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path d="M40 40 Q60 20 80 40 Q100 60 120 40 Q140 20 160 40" stroke="%23DAA520" fill="none" stroke-width="1.5"/><circle cx="80" cy="80" r="8" fill="%2396794F" opacity="0.3"/><circle cx="120" cy="120" r="12" fill="%23CD853F" opacity="0.2"/><path d="M50 160 Q80 140 110 160 Q140 180 170 160" stroke="%23B8860B" fill="none" stroke-width="2" opacity="0.3"/></svg>');
+            background-repeat: repeat;
+            background-size: 220px 220px;
+            animation: floatingInk 110s linear infinite reverse;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes floatingInk {
+            from { background-position: 0 0; }
+            to { background-position: -300px 200px; }
+        }
+
+        /* ওনার বার - ইংলিশ থিমে গ্লাসি ইফেক্ট */
+        .owner-bar {
+            background: rgba(218, 165, 32, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            width: 100%;
             text-align: center;
-            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+            padding: 12px 0;
+            font-weight: bold;
+            color: #FFE4B5;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.4);
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', 'Arial Unicode MS', sans-serif;
+        }
+
+        .header {
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #FFE4B5, #DAA520, #CD853F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .semester-badge {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.3), rgba(139, 69, 19, 0.4));
+            backdrop-filter: blur(8px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #FFE4B5;
+            font-weight: bold;
+            margin: 15px 0 25px 0;
+            border: 2px solid rgba(218, 165, 32, 0.4);
+            font-size: 1.4rem;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: #FFE4B5;
+            font-size: 1.8rem;
+            margin: 25px 0 15px 0;
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            padding-left: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            border-left: 6px solid #DAA520;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ইংলিশ থিমে ব্লার বাটন */
+        .btn {
+            background: rgba(44, 62, 80, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(218, 165, 32, 0.5);
+            color: #FFE4B5;
+            padding: 18px 25px;
+            width: 100%;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.3), transparent);
+            transition: 0.6s;
+            z-index: 1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: rgba(74, 91, 110, 0.6);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: #FFE4B5;
+        }
+
+        .btn-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            text-align: center;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+            transition: 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn:hover .btn-icon {
+            transform: rotate(5deg) scale(1.1);
         }
 
         .btn-content {
             flex: 1;
+            position: relative;
+            z-index: 2;
         }
 
         .btn-title {
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FFE4B5;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
         }
 
         .btn-author {
-            font-size: 0.85rem;
+            font-size: 1rem;
+            color: #DAA520;
             opacity: 0.9;
-            color: #FFD700;
             font-style: italic;
         }
 
-        .back-btn {
-            margin-top: 20px;
-            margin-bottom: 30px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-            padding: 12px 25px;
-            border-radius: 30px;
+        .btn-arrow {
+            font-size: 1.8rem;
+            color: #DAA520;
+            opacity: 0.8;
             transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            display: inline-block;
+            position: relative;
+            z-index: 2;
+            margin-left: 5px;
         }
 
-        .back-btn:hover {
-            background: rgba(0, 0, 0, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .btn:hover .btn-arrow {
+            opacity: 1;
+            transform: translateX(8px);
+            color: #FFE4B5;
         }
+
+        /* ইংলিশ থিমের ফ্লোটিং এলিমেন্টস - লাইব্রেরি ও বইয়ের মোটিফ */
+        .floating-element {
+            position: fixed;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+            animation: floatEnglish 12s ease-in-out infinite;
+        }
+
+        @keyframes floatEnglish {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(5deg); }
+        }
+
+        .element-1 { top: 15%; left: 3%; animation-delay: 0s; }  /* বই */
+        .element-2 { top: 30%; right: 5%; animation-delay: 3s; } /* কলম */
+        .element-3 { bottom: 20%; left: 5%; animation-delay: 5s; } /* স্ক্রল */
+        .element-4 { bottom: 35%; right: 3%; animation-delay: 2s; } /* মুকুট */
 
         .footer-note {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-            margin-top: 20px;
+            color: #FFE4B5;
+            font-size: 1rem;
+            margin-top: 30px;
+            margin-bottom: 30px;
             text-align: center;
+            background: rgba(44, 62, 80, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 10px 35px;
+            border-radius: 50px;
+            border: 2px solid rgba(218, 165, 32, 0.4);
+            position: relative;
+            z-index: 10;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
+    <!-- ইংলিশ থিমের ফ্লোটিং এলিমেন্টস -->
+    <div class="floating-element element-1">📖</div> <!-- বই -->
+    <div class="floating-element element-2">✒️</div> <!-- কলম -->
+    <div class="floating-element element-3">📜</div> <!-- স্ক্রল -->
+    <div class="floating-element element-4">👑</div> <!-- মুকুট (লর্ড টেনিসনের জন্য) -->
+
     <div class="owner-bar">
         Owner - Subha Maji
     </div>
 
-    <h1>📚 ইংরেজি চ্যাপ্টার লিস্ট</h1>
+    <div class="header">
+        <h1>📚 ইংরেজি অধ্যায় সমূহ</h1>
+    </div>
+
     <div class="semester-badge">🎓 SEMESTER - III</div>
 
     <!-- Prose Section -->
@@ -198,7 +445,7 @@
                 <span class="btn-title">The Night Train at Deoli</span>
                 <span class="btn-author">Ruskin Bond</span>
             </span>
-            <span style="margin-left: auto;">→</span>
+            <span class="btn-arrow">→</span>
         </a>
         
         <a href="https://okdone713334-design.github.io/Strong-root/" class="btn">
@@ -207,7 +454,7 @@
                 <span class="btn-title">Strong Roots</span>
                 <span class="btn-author">A.P.J. Abdul Kalam</span>
             </span>
-            <span style="margin-left: auto;">→</span>
+            <span class="btn-arrow">→</span>
         </a>
 
         <a href="https://okdone713334-design.github.io/The-Bet/" class="btn">
@@ -216,7 +463,7 @@
                 <span class="btn-title">The Bet</span>
                 <span class="btn-author">Anton Chekhov</span>
             </span>
-            <span style="margin-left: auto;">→</span>
+            <span class="btn-arrow">→</span>
         </a>
     </div>
 
@@ -229,7 +476,7 @@
                 <span class="btn-title">Our Casuarina Tree</span>
                 <span class="btn-author">Toru Dutt</span>
             </span>
-            <span style="margin-left: auto;">→</span>
+            <span class="btn-arrow">→</span>
         </a>
         
         <a href="#" class="btn">
@@ -238,7 +485,7 @@
                 <span class="btn-title">Ulysses</span>
                 <span class="btn-author">Lord Alfred Tennyson</span>
             </span>
-            <span style="margin-left: auto;">→</span>
+            <span class="btn-arrow">→</span>
         </a>
     </div>
 
@@ -251,13 +498,13 @@
                 <span class="btn-title">Riders to the Sea</span>
                 <span class="btn-author">J.M. Synge</span>
             </span>
-            <span style="margin-left: auto;">→</span>
+            <span class="btn-arrow">→</span>
         </a>
     </div>
 
     
     <div class="footer-note">
-        শুভ মাজী আপনাদের জন্য এটি তৈরি করেছেন
+        শুভ মাজি আপনাদের জন্য এটি তৈরি করেছেন
     </div>
 
 </body>
